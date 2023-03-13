@@ -1,0 +1,14 @@
+.SwitchButton {
+    background-color: #606060;
+    height : 20px;
+    width : 20px;
+    position : absolute;
+    right : 0px;
+    top : 0px;
+    text-align : center; 
+}
+
+.SwitchButton:hover {
+    cursor : pointer;
+    background-color: #909090;
+}
