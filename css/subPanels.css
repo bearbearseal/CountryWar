@@ -1,0 +1,35 @@
+.Defense {
+    background-color: #4060f0;
+    color: #203080;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+}
+
+.Defense td {
+    border-bottom: 1px solid #ddd;
+}
+
+.Domestic {
+    background-color: #80ffc0;
+    color: #206080;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+}
+
+.Domestic td {
+    border-bottom: 1px solid #ddd;
+}
+
+.Military {
+    background-color: #a080ff;
+    color: #801240;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+}
+
+.Military td {
+    border-bottom: 1px solid #ddd;
+}

@@ -1,20 +1,24 @@
+import "../css/subPanels.css"
+
 export class DomesticPanel {
     private agriculture : number;
-    private agriCell : HTMLTableCellElement;
     private commerce : number;
-    private commCell : HTMLTableCellElement;
     private industry : number;
-    private indtCell : HTMLTableCellElement;
     private mine : number;
-    private mineCell : HTMLTableCellElement;
     private population: number;
-    private poplCell : HTMLTableCellElement;
     private security : number;
+
+    private agriCell : HTMLTableCellElement;
+    private commCell : HTMLTableCellElement;
+    private indtCell : HTMLTableCellElement;
+    private mineCell : HTMLTableCellElement;
+    private poplCell : HTMLTableCellElement;
     private secrCell : HTMLTableCellElement;
 
     constructor(master : HTMLDivElement) {
         this.init_random_attributes();
         var table : HTMLTableElement = <HTMLTableElement>document.createElement('table');
+        table.className += "Domestic";
         master.append(table);
 
         var populationRow = table.insertRow();
@@ -135,6 +139,30 @@ export class DomesticPanel {
 
     public tick_mine() : number {
         return this.mine;
+    }
+
+    public get_agriculture() : number {
+        return this.agriculture;
+    }
+
+    public get_commerce() : number {
+        return this.commerce;
+    }
+
+    public get_industry() : number {
+        return this.industry;
+    }
+
+    public get_mine() : number {
+        return this.mine;
+    }
+
+    public get_population(): number {
+        return this.population;
+    }
+
+    public get_securtiy(): number {
+        return this.security;
     }
 }
 

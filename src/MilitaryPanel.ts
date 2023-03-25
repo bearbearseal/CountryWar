@@ -1,6 +1,6 @@
-export class MilitaryPanel {
-    private panel: HTMLDivElement;
+import "../css/subPanels.css"
 
+export class MilitaryPanel {
     private gunSoldier: number=0;
     private rocketSoldier: number=0;
     private mortarSoldier: number=0;
@@ -17,21 +17,10 @@ export class MilitaryPanel {
     private tankCell: HTMLTableCellElement;
     private heavyTankCell: HTMLTableCellElement;
 
-    private bunker: number = 0;
-    private machineGun: number = 0;
-    private heavyGun: number = 0;
-    private antiAir: number = 0;
-
-    private bunkerCell: HTMLTableCellElement;
-    private machineGunCell: HTMLTableCellElement;
-    private heavyGunCell: HTMLTableCellElement;
-    private antiAirCell: HTMLTableCellElement;
-
     constructor(master: HTMLDivElement) {
-        this.panel = document.createElement('div');
-        master.append(this.panel);
         var table: HTMLTableElement = <HTMLTableElement>document.createElement('table');
-        this.panel.append(table);
+        table.className += 'Military';
+        master.append(table);
 
         var gunSoldierRow = table.insertRow();
         var rocketSoldierRow = table.insertRow();
@@ -40,10 +29,6 @@ export class MilitaryPanel {
         var apcRow = table.insertRow();
         var tankRow = table.insertRow();
         var heavyTankRow = table.insertRow();
-        var bunkerRow = table.insertRow();
-        var machineGunRow = table.insertRow();
-        var heavyGunRow = table.insertRow();
-        var antiAirRow = table.insertRow();
 
         var gunSoldierTag = gunSoldierRow.insertCell();
         var rocketSoldierTag = rocketSoldierRow.insertCell();
@@ -52,10 +37,6 @@ export class MilitaryPanel {
         var apcTag = apcRow.insertCell();
         var tankTag = tankRow.insertCell();
         var heavyTankTag = heavyTankRow.insertCell();
-        var bunkerTag = bunkerRow.insertCell();
-        var machineGunTag = machineGunRow.insertCell();
-        var heavyGunTag = heavyGunRow.insertCell();
-        var antiAirTag = antiAirRow.insertCell();
 
         gunSoldierTag.innerHTML = 'Gun Soldier';
         rocketSoldierTag.innerHTML = 'Rocket Soldier';
@@ -64,10 +45,6 @@ export class MilitaryPanel {
         apcTag.innerHTML = 'APC';
         tankTag.innerHTML = 'Tank';
         heavyTankTag.innerHTML = 'Heavy Tank';
-        bunkerTag.innerHTML = 'Bunker';
-        machineGunTag.innerHTML = 'Machine Gun';
-        heavyGunTag.innerHTML = 'Heavy Gun';
-        antiAirTag.innerHTML = 'Anti-Air Gun';
 
         this.gunSoldierCell = gunSoldierRow.insertCell();
         this.rocketSoldierCell = rocketSoldierRow.insertCell();
@@ -76,10 +53,6 @@ export class MilitaryPanel {
         this.apcCell = apcRow.insertCell();
         this.tankCell = tankRow.insertCell();
         this.heavyTankCell = heavyTankRow.insertCell();
-        this.bunkerCell = bunkerRow.insertCell();
-        this.machineGunCell = machineGunRow.insertCell();
-        this.heavyGunCell = heavyGunRow.insertCell();
-        this.antiAirCell = antiAirRow.insertCell();
 
         this.gunSoldierCell.innerHTML = String(this.gunSoldier);
         this.rocketSoldierCell.innerHTML = String(this.rocketSoldier);
@@ -88,10 +61,6 @@ export class MilitaryPanel {
         this.apcCell.innerHTML = String(this.apc);
         this.tankCell.innerHTML = String(this.tank);
         this.heavyTankCell.innerHTML = String(this.heavyTank);
-        this.bunkerCell.innerHTML = String(this.bunker);
-        this.machineGunCell.innerHTML = String(this.machineGun);
-        this.heavyGunCell.innerHTML = String(this.heavyGun);
-        this.antiAirCell.innerHTML = String(this.antiAir);
     }
 
     public add_gunSolder(addition: number): void {
@@ -127,25 +96,5 @@ export class MilitaryPanel {
     public add_heavyTank(addition: number): void {
         this.heavyTank += addition;
         this.heavyTankCell.innerHTML = String(this.heavyTank);
-    }
-
-    public add_bunker(addition: number): void {
-        this.bunker += addition;
-        this.bunkerCell.innerHTML = String(this.bunker);
-    }
-
-    public add_machineGun(addition: number): void {
-        this.machineGun += addition;
-        this.machineGunCell.innerHTML = String(this.machineGun);
-    }
-
-    public add_heavyGun(addition: number): void {
-        this.heavyGun += addition;
-        this.heavyGunCell.innerHTML = String(this.heavyGun);
-    }
-
-    public add_antiAir(addition: number): void {
-        this.antiAir += addition;
-        this.antiAirCell.innerHTML = String(this.antiAir);
     }
 }

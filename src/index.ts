@@ -1,11 +1,11 @@
-import { Country } from "./Country"
-import { countryHeight } from "./Country";
-import { countryWidth } from "./Country";
+import { Province } from "./Province"
+import { provinceHeight } from "./Province";
+import { provinceWidth } from "./Province";
 
-let countryList : Country[]
-for(let i = 0; i < 30; ++i)
+let provinceList : Province[]
+for(let i = 0; i < 20; ++i)
 {
-    let aCountry = new Country('Province' + i)
-    aCountry.set_color('grey');
-    aCountry.set_location(20 + (i%6)*(40+countryWidth), 20 + Math.floor(i/6)*(40+countryHeight));
+    let aProvince = new Province('Province' + i)
+    aProvince.set_color('grey');
+    aProvince.set_location(20 + (i%5)*(40+provinceWidth), 20 + Math.floor(i/5)*(40+provinceHeight));
 }
